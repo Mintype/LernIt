@@ -1,0 +1,58 @@
+.background{
+    background: rgb(209, 197, 169);
+    width: 100%;
+    height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 50px;
+    padding-bottom: 5px;
+    text-shadow: 1px 1px 2px black;
+
+    animation: fadeInAnimation ease 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.description {
+    opacity: 0;
+
+    animation: fadeInAnimation ease 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    text-shadow: 1px 1px 2px black;
+    animation-delay: 500ms;
+}
+
+.signupButton {
+    padding: 12px 24px 12px 24px;
+    margin-top: 2vh;
+    background-color: rgb(28, 82, 71);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 16px;
+    opacity: 0;
+
+    animation: fadeInAnimation ease 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    text-shadow: 1px 1px 2px black;
+    animation-delay: 1000ms;
+}
+.signupButton:hover {
+    background-color: rgb(19, 56, 48);
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
