@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 import './Signup.css';
 
@@ -19,8 +19,21 @@ export default function Signup() {
       })
       .catch((error) => {
         console.log(error);
+        alert('Something went wrong! Try again later.')
       });
   };
+
+  useEffect(() => {
+    // Check if the user is already logged in
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigate('/'); // Redirect to the home page if already logged in
+      }
+    });
+
+    // Clean up the subscription on unmount
+    return () => unsubscribe();
+  }, []);
 
   return (
     <main className="main">
