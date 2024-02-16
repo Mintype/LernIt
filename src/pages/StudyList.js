@@ -63,17 +63,21 @@ function StudyList() {
 
     return (
         <div>
-            {studyList ? (
-                <div>
-                    <h1>{studyList.title}</h1>
-                    <h1>By: {studyList.user}</h1>
-                    <h1>{studyList.items[0].text1}</h1>
-                    <h1>{studyList.items[0].text2}</h1>
-                </div>
-            ) : (
-                <p>Loading...</p>
-            )}
-        </div>
+        {studyList ? (
+            <div>
+                <h1>{studyList.title}</h1>
+                <h2>By: {studyList.user}</h2>
+                {studyList.items.map((item, index) => (
+                    <div key={index}>
+                        <h3>{item.text1}</h3>
+                        <h3>{item.text2}</h3>
+                    </div>
+                ))}
+            </div>
+        ) : (
+            <p>Loading...</p>
+        )}
+    </div>
     );
 }
 
