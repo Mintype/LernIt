@@ -15,14 +15,11 @@ function NewStudyList() {
   const [input1, setInput1] = useState('');
   const [input2, setInput2] = useState('');
 
-  const messagesRef = collection(db, "studylists");
-
   const addItemToList = () => {
     if (input1 && input2) {
       setItems([...items, { text1: input1, text2: input2 }]);
       setInput1('');
       setInput2('');
-      //console.log("Updated List:", JSON.stringify(items));
     }
   };
 
@@ -52,15 +49,6 @@ function NewStudyList() {
     } catch (error) {
       console.error("Error saving list to Firestore:", error);
     }
-
-/*
-    await db.collection("studylists").add({
-      items: items.map(item => ({ text1: item.text1, text2: item.text2 }))//,
-      //createdAt: serverTimestamp(),
-      // You can add more fields here if needed
-    });*/
-
-    // You can add further logic here to save the list to a database or perform any other action.
   };
 
   // Log the updated list after calling setItems
