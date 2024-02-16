@@ -1,24 +1,39 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Navbar from './Navbar';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import NewStudyList from './pages/NewStudyList';
-import New from './pages/New';
+import React, { useState, useEffect } from "react";
+import logo from './logo.svg';
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Auth } from "./components/Auth.js";
+import NewStudyList from "./pages/NewStudyList.js";
+import About from "./pages/About.js";
+import { AppWrapper } from "./components/AppWrapper";
+import Cookies from "universal-cookie";
+import './App.css';
+
+const cookies = new Cookies();
 
 function App() {
+  const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
+
+  if (!isAuth) {
+    return (
+      <AppWrapper
+        isAuth={isAuth}
+        setIsAuth={setIsAuth}
+      >
+        <Auth setIsAuth={setIsAuth} />
+      </AppWrapper>
+    );
+  }
+  
   return (
-    <>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<Signup/>}/>
-        <Route path="/newstudylist" element={<NewStudyList/>}/>
-        <Route path="/new" element={<New/>}/>
-      </Routes>
-    </>
+    <AppWrapper>
+      <Router>
+        <Routes>
+          <Route path="/new" element={<NewStudyList />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
+    </AppWrapper>
   );
 }
 
