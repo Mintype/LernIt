@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Auth } from "./components/Auth.js";
 import NewStudyList from "./pages/NewStudyList.js";
 import About from "./pages/About.js";
+import StudyList from "./pages/StudyList.js";
 import { AppWrapper } from "./components/AppWrapper";
 import Cookies from "universal-cookie";
 import './App.css';
@@ -31,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/new" element={<NewStudyList />} />
           <Route path="/about" element={<About />} />
+          <Route path="/list/:id" element={<StudyList />} />
         </Routes>
       </Router>
     </AppWrapper>

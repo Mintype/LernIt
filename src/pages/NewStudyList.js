@@ -14,6 +14,8 @@ function NewStudyList() {
   const [items, setItems] = useState([]);
   const [input1, setInput1] = useState('');
   const [input2, setInput2] = useState('');
+  
+  const [title, setTitle] = useState('');
 
   const addItemToList = () => {
     if (input1 && input2) {
@@ -33,8 +35,8 @@ function NewStudyList() {
     items.forEach(item => {
       dataToSave.push({
         text1: item.text1,
-        text2: item.text2,
-        user: auth.currentUser.displayName
+        text2: item.text2//,
+        //user: auth.currentUser.displayName
       });
     });
 
@@ -42,6 +44,8 @@ function NewStudyList() {
       // Save the data array to Firestore
       await addDoc(collection(db, "studylists"), {
         items: dataToSave,
+        user: auth.currentUser.displayName,
+        title: title,
         createdAt: serverTimestamp()
       });
   
@@ -59,6 +63,12 @@ function NewStudyList() {
   return (
     <div>
       <h2>New Study List</h2>
+      <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Enter title"
+        />
       <ul>
         {items.map((item, index) => (
           <li key={index}>{item.text1} - {item.text2}</li>
