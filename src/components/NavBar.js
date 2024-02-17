@@ -134,6 +134,7 @@ function NavBar() {
         className="nav-search"
         placeholder="Search.."
         inputDebounce="200"
+        maxLength="100"
         items={items}
         onSearch={handleOnSearch}
         onHover={handleOnHover}
@@ -150,6 +151,7 @@ function NavBar() {
         className="nav-search"
         placeholder="Search.."
         inputDebounce="200"
+        maxLength="100"
         items={[]}
         onSearch={handleOnSearch}
         onHover={handleOnHover}
