@@ -7,14 +7,20 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
     background-color: #333;
+
+    
+    display: flex;
+    align-items: center;
+
+    z-index: 0;
 }
   
 .title {
     float: left;
 
-    font-size: 18px;
+    font-size: 24px;
 }
   
 .nav-item {
@@ -31,4 +37,16 @@ body {
 
 #nav-item a:hover {
     background-color: #111;
+}
+
+.nav-search {
+    padding: 0px;
+    border: none;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 17px;
+    border-radius: 10px;
+
+    flex: 1;
+    margin-right: 0px;
 }
