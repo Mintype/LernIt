@@ -2,33 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import '../styles/navbar.css';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-import { db, auth } from "../firebase-config";
-//import { collection, doc, query, where, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase-config";
 import {
     collection,
-    addDoc,
-    getDocs,
-    where,
-    serverTimestamp,
-    onSnapshot,
-    query,
-    orderBy,
-    doc,
-    getDoc
+    getDocs
   } from "firebase/firestore";
 
 function NavBar() {
-
-    let items2 = [
-      {
-        id: 0,
-        name: 'foods'
-      },
-      {
-        id: 1,
-        name: 'spanish words'
-      }
-    ]
     
     const [items, setItems] = useState(null);
 
@@ -64,36 +44,6 @@ function NavBar() {
     useEffect(() => {
       console.log("Items list:", items); // Log items whenever it changes
     }, [items]); // Log whenever items changes
-    
-    
-
-/*
-    const fetchAllStudyListTitles = async () => {
-      try {
-          const querySnapshot = await getDocs(collection(db, 'studylists'));
-          let id = 0; // Initialize ID counter
-          const titles = [];
-          querySnapshot.forEach(doc => {
-              if (doc.exists()) {
-                  const data = doc.data();
-                  if (data && data.title) {
-                      titles.push({ id: id++, title: data.title }); // Increment ID for each item
-                  } else {
-                      console.log(`Document ${doc.id} is missing title.`);
-                  }
-              } else {
-                  console.log(`Document ${doc.id} does not exist.`);
-              }
-          });
-          console.log("Titles list:", titles);
-          return titles;
-      } catch (error) {
-          console.error("Error fetching study lists:", error);
-          return [];
-      }
-    };
-    
-    items = fetchAllStudyListTitles();*/
     
       const handleOnSearch = (string, results) => {
         // onSearch will have as the first callback parameter
@@ -164,27 +114,6 @@ function NavBar() {
         }}
         />
 )}
-
-
-{/*
-            <ReactSearchAutocomplete
-            className="nav-search"
-            placeholder="Search.."
-            inputDebounce="200"
-            items={items}
-            onSearch={handleOnSearch}
-            onHover={handleOnHover}
-            onSelect={handleOnSelect}
-            onFocus={handleOnFocus}
-            autoFocus
-            formatResult={formatResult}
-            styling={{
-                height: "35px"
-            }}
-            />
-
-          */}
-
             <li className="nav-item" id="nav-item"><a href="/about">About</a></li>
             <li className="nav-item" id="nav-item"><a href="/me">Me</a></li>
         </ul>
