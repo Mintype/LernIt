@@ -55,10 +55,10 @@ function NavBar() {
 
   return (
     <div>
-        <ul class="navbar">
-            <li class="title" id="nav-item"><a href="/">LernIt</a></li>
-            <li class="nav-item" id="nav-item"><a href="/about">My Sets</a></li>
-            <li class="nav-item" id="nav-item"><a href="/new">New</a></li>
+        <ul className="navbar">
+            <li className="title" id="nav-item"><a href="/">LernIt</a></li>
+            <li className="nav-item" id="nav-item"><a href="/about">My Sets</a></li>
+            <li className="nav-item" id="nav-item"><a href="/new">New</a></li>
             <ReactSearchAutocomplete
             className="nav-search"
             placeholder="Search.."
@@ -74,8 +74,8 @@ function NavBar() {
                 height: "35px"
             }}
             />
-            <li class="nav-item" id="nav-item"><a href="/about">About</a></li>
-            <li class="nav-item" id="nav-item"><a href="/new">Me</a></li>
+            <li className="nav-item" id="nav-item"><a href="/about">About</a></li>
+            <li className="nav-item" id="nav-item"><a href="/new">Me</a></li>
         </ul>
     </div>
   )
