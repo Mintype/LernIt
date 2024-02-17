@@ -6,6 +6,9 @@ import { Auth } from "./components/Auth.js";
 import NewStudyList from "./pages/NewStudyList.js";
 import About from "./pages/About.js";
 import Home from "./pages/Home.js";
+import Search from "./pages/Search.js";
+import MySets from "./pages/MySets.js";
+import UserInfo from "./pages/UserInfo.js";
 import StudyList from "./pages/StudyList.js";
 import { AppWrapper } from "./components/AppWrapper";
 import Cookies from "universal-cookie";
@@ -33,8 +36,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new" element={<NewStudyList />} />
-          <Route path="/about" element={<About />} />
           <Route path="/list/:id" element={<StudyList />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/mysets" element={<MySets />} />
+          <Route path="/me" element={<UserInfo />} />
         </Routes>
       </Router>
     </AppWrapper>
