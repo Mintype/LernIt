@@ -61,17 +61,8 @@ function MySets() {
       <h1>Study Lists</h1>
       <ul>
         { studyLists ? (
-        
-        studyLists.map((guide) => (
-          <li key={guide.id}>{guide.title}</li>
-        ))
-
-        )
-      
-        : (
-          <p>Loading...</p>
-      )
-      }
+          studyLists.map((guide) => ( <li key={guide.id}>{guide.title}</li> ))
+        ) : ( <p>Loading...</p> )}
       </ul>
     </div>
   )
