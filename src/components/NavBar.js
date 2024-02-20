@@ -27,7 +27,7 @@ function NavBar() {
               console.log(`Document ${doc.id} does not exist.`);
             }
           });
-          console.log("Titles list:", titles);
+          //console.log("Titles list:", titles);
           setItems(titles); // Update state with fetched titles
         } catch (error) {
           console.error("Error fetching study lists:", error);
@@ -39,7 +39,7 @@ function NavBar() {
     }, []); // Empty dependency array means this effect runs only once, on mount
     
     useEffect(() => {
-      console.log("Items list:", items); // Log items whenever it changes
+      //console.log("Items list:", items); // Log items whenever it changes
     }, [items]); // Log whenever items changes
     
       const handleOnSearch = (string, results) => {

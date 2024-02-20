@@ -45,6 +45,8 @@ function NewStudyList() {
       await addDoc(collection(db, "studylists"), {
         items: dataToSave,
         user: auth.currentUser.displayName,
+        userId: auth.currentUser.uid, // Save user's ID
+        isPublic: true, // or false depending on your logic
         title: title,
         createdAt: serverTimestamp()
       });
