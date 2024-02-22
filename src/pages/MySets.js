@@ -45,7 +45,7 @@ function MySets() {
                   // only adds studylist if user made it.
                   if(studyGuide["userid"] == auth.currentUser.uid)
                     studyGuidesArray.push(studyGuide);
-                  
+
                   setStudyLists(studyGuidesArray);
               } else {
                   console.log("Document does not exist:", doc.id);
@@ -71,7 +71,11 @@ function MySets() {
       <h1>Study Lists</h1>
       <ul>
         { studyLists ? (
-          studyLists.map((guide) => ( <li key={guide.id}>{guide.title} : {guide.user}</li> ))
+          studyLists.map((guide) => (
+          
+          <li key={guide.id}> <a href={`/list/${guide.id}`}> {guide.title} : {guide.user} </a> </li> 
+          
+          ))
         ) : ( <p>Loading...</p> )}
       </ul>
     </div>
