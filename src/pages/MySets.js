@@ -29,13 +29,23 @@ function MySets() {
 
           querySnapshot.forEach((doc) => {
               if (doc.exists()) {
-                  const { title, user } = doc.data();
+                  const { title, user, userId } = doc.data();
                   const studyGuide = {
                       id: doc.id,
+                      userid: userId,
                       user: user,
                       title: title
                   };
-                  studyGuidesArray.push(studyGuide);
+
+                  // for testing purposes.
+                  console.log("guide id: " + studyGuide["userid"]);
+                  console.log("user id: " + auth.currentUser.uid);
+                  console.log("user id: " + auth.currentUser.uid + "\n");
+                  
+                  // only adds studylist if user made it.
+                  if(studyGuide["userid"] == auth.currentUser.uid)
+                    studyGuidesArray.push(studyGuide);
+                  
                   setStudyLists(studyGuidesArray);
               } else {
                   console.log("Document does not exist:", doc.id);
@@ -61,7 +71,7 @@ function MySets() {
       <h1>Study Lists</h1>
       <ul>
         { studyLists ? (
-          studyLists.map((guide) => ( <li key={guide.id}>{guide.title}</li> ))
+          studyLists.map((guide) => ( <li key={guide.id}>{guide.title} : {guide.user}</li> ))
         ) : ( <p>Loading...</p> )}
       </ul>
     </div>
