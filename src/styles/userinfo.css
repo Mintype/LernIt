@@ -1,0 +1,6 @@
+.profileImage {
+    border-radius: 50%; /* Make the image appear as a circle */
+    width: 75px; /* Set the width and height to your desired size */
+    height: 75px;
+    object-fit: cover; /* Maintain aspect ratio */
+}

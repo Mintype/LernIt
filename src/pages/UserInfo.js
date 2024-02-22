@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { auth } from "../firebase-config";
+import '../styles/userinfo.css';
 
 function UserInfo() {
   const [displayName, setDisplayName] = useState('Unknown User');
@@ -35,7 +36,7 @@ function UserInfo() {
     <div>
       <h1>User Information</h1>
       <h1>{displayName}</h1>
-      {photoURL && <img src={photoURL} alt="Profile" />}
+      {photoURL && <img className='profileImage' src={photoURL} alt="Profile" />}
     </div>
   );
 }
