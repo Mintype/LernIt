@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { db, auth } from "../firebase-config";
+import '../styles/NewStudyList.css';
 import {
   collection,
   addDoc,
