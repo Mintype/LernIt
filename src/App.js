@@ -38,6 +38,7 @@ function App() {
           <Route path="/new" element={<NewStudyList />} />
           <Route path="/list/:id" element={<StudyList />} />
           <Route path="/about" element={<About />} />
+          <Route path="/search/:id" element={<Search />} />
           <Route path="/search" element={<Search />} />
           <Route path="/mysets" element={<MySets />} />
           <Route path="/me" element={<UserInfo />} />

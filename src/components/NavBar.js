@@ -4,6 +4,8 @@ import '../styles/navbar.css';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import { db } from "../firebase-config";
 import { collection, getDocs } from "firebase/firestore";
+import { useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function NavBar() {
     
@@ -41,11 +43,14 @@ function NavBar() {
     useEffect(() => {
       //console.log("Items list:", items); // Log items whenever it changes
     }, [items]); // Log whenever items changes
+
+    
     
       const handleOnSearch = (string, results) => {
         // onSearch will have as the first callback parameter
         // the string searched and for the second the results.
         console.log(string, results)
+        document.location.href = `/search/${string}`;
       }
     
       const handleOnHover = (result) => {
