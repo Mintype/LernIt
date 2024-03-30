@@ -17,6 +17,7 @@ function UserInfo() {
         }
         if (photoURL) {
           setPhotoURL(photoURL);
+          console.log("Photo URL:", photoURL);
         }
       } else {
         setDisplayName('Unknown User');

@@ -18,6 +18,12 @@ function NewStudyList() {
   
   const [title, setTitle] = useState('');
 
+  const deleteItem = (index) => {
+    const updatedItems = [...items];
+    updatedItems.splice(index, 1);
+    setItems(updatedItems);
+  };
+
   const addItemToList = () => {
     if (input1 && input2) {
       setItems([...items, { text1: input1, text2: input2 }]);
@@ -65,19 +71,26 @@ function NewStudyList() {
 
   return (
     <div>
-      <h2>New Study List</h2>
+      <h2>Create a New Study List</h2>
+      <button className='button' onClick={handleSave}>Save</button>
       <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter title"
         />
-      <ul>
+      <div className='list'>
         {items.map((item, index) => (
-          <li key={index}>{item.text1} - {item.text2}</li>
+            <div className='test'>
+              <div className='listItem listItem1' key={index}>{item.text1}</div>
+              <div className='listItem listItem2' key={index}>{item.text2}</div>
+              <button className='deleteButton' onClick={() => deleteItem(index)}>Delete</button>
+            </div>
+            
         ))}
-      </ul>
-      <div>
+      </div>
+      <div className='inputsDiv'>
+        <div>
         <input
           type="text"
           value={input1}
@@ -90,8 +103,8 @@ function NewStudyList() {
           onChange={(e) => setInput2(e.target.value)}
           placeholder="Enter Text 2"
         />
-        <button onClick={addItemToList}>Add to List</button>
-        <button onClick={handleSave}>Save</button>
+        </div>
+        <button className='button' onClick={addItemToList}>Add to List</button>
       </div>
     </div>
   );
