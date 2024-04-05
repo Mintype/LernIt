@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { db, auth } from "../firebase-config";
-//import { collection, doc, query, where, onSnapshot } from "firebase/firestore";
 import {
     collection,
     addDoc,

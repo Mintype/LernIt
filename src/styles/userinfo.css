@@ -1,6 +1,42 @@
+.pageContainer {
+    padding-top: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.user-container {
+    border-style: solid;
+
+    display: flex;
+}
+
 .profileImage {
     border-radius: 50%; /* Make the image appear as a circle */
-    width: 75px; /* Set the width and height to your desired size */
-    height: 75px;
+    width: 100px; /* Set the width and height to your desired size */
+    height: 100px;
     object-fit: cover; /* Maintain aspect ratio */
+}
+
+.username {
+    margin-left: 20px;
+    font-size: 35px;
+}
+
+.user-sets-container-title {
+    border-style: solid;
+    margin-top: 50px;
+}
+
+.username-sets {
+    text-align: left;
+    display: flex;
+    padding: 0px;
+    margin: 0;
+}
+
+
+.user-sets-container {
+    border-style: solid;
+    margin-top: 0px;
+    height: 100px;
 }
