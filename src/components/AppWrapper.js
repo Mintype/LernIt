@@ -2,6 +2,7 @@ import { auth } from "../firebase-config.js";
 import { signOut } from "firebase/auth";
 import NavBar from "./NavBar.js";
 import '../styles/AppWrapper.css';
+import '../styles/ScrollBar.css';
 
 import Cookies from "universal-cookie";
 
