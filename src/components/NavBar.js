@@ -74,7 +74,7 @@ function NavBar() {
       }
 
   return (
-    <div>
+    <div className='make-sticky'>
         <ul className="navbar">
             <li className="title" id="nav-item"><a href="/">LernIt</a></li>
             <li className="nav-item" id="nav-item"><a href="/mysets">My Sets</a></li>

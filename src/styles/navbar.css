@@ -50,3 +50,8 @@ body {
     flex: 1;
     margin-right: 0px;
 }
+
+.make-sticky {
+    position: fixed;
+    width: 100%;
+}
