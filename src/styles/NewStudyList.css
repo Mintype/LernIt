@@ -56,3 +56,9 @@
 
     border-radius: 10px;
 }
+
+.container {
+    border-style: solid;
+    width: 80%;
+    padding: 16px;
+}

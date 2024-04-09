@@ -70,7 +70,7 @@ function NewStudyList() {
   }, [items]);
 
   return (
-    <div>
+    <div className='container'>
       <h2>Create a New Study List</h2>
       <button className='button' onClick={handleSave}>Save</button>
       <input
