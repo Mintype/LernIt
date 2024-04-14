@@ -10,6 +10,7 @@ import Search from "./pages/Search.js";
 import MySets from "./pages/MySets.js";
 import UserInfo from "./pages/UserInfo.js";
 import StudyList from "./pages/StudyList.js";
+import TermsOfService from "./pages/TermsOfService.js";
 import { AppWrapper } from "./components/AppWrapper";
 import Cookies from "universal-cookie";
 import './App.css';
@@ -42,6 +43,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/mysets" element={<MySets />} />
           <Route path="/me" element={<UserInfo />} />
+          <Route path="/terms" element={<TermsOfService />} />
         </Routes>
       </Router>
     </AppWrapper>
