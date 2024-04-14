@@ -17,6 +17,7 @@ import {
 
 function Home() {
   const [displayName, setDisplayName] = useState('Stranger');
+  const [studyLists, setStudyLists] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,6 +34,51 @@ function Home() {
     });
 
     return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    const fetchStudyGuides = async () => {
+      try {
+          const querySnapshot = await getDocs(collection(db, 'studylists'));
+
+          const studyGuidesArray = [];
+
+          querySnapshot.forEach((doc) => {
+              if (doc.exists()) {
+                  const { title, user, userId } = doc.data();
+                  const studyGuide = {
+                      id: doc.id,
+                      userid: userId,
+                      user: user,
+                      title: title
+                  };
+
+                  // for testing purposes.
+                  console.log("guide id: " + studyGuide["userid"]);
+                  console.log("user id: " + auth.currentUser.uid);
+                  console.log("user id: " + auth.currentUser.uid + "\n");
+                  
+                  // only adds studylist if user made it.
+                  if(studyGuide["userid"] == auth.currentUser.uid)
+                    studyGuidesArray.push(studyGuide);
+
+                  setStudyLists(studyGuidesArray);
+              } else {
+                  console.log("Document does not exist:", doc.id);
+              }
+          });
+
+          console.log("Study Guides Array:", studyGuidesArray);
+          return studyGuidesArray;
+      } catch (error) {
+          console.error("Error fetching study guides:", error);
+          // Handle error fetching study guides
+          return [];
+      }
+    };
+
+    fetchStudyGuides();
+
   }, []);
 
   if (loading) {
@@ -62,6 +108,13 @@ function Home() {
         <h2 className='list-container-title'>Your Study Lists</h2>
         <div className='list-item-container'>
           <div className='exampleBox'>empty box 😔</div>
+          { studyLists ? (
+            studyLists.map((guide) => (
+
+              <div className='exampleBox' key={guide.id}> <a href={`/list/${guide.id}`}> {guide.title} </a> </div> 
+
+            ))
+          ) : ( <p>Loading...</p> )}
         </div>
       </div>
     </div>
