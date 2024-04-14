@@ -14,6 +14,8 @@ import TermsOfService from "./pages/TermsOfService.js";
 import { AppWrapper } from "./components/AppWrapper";
 import Cookies from "universal-cookie";
 import './App.css';
+import Privacy from "./pages/Privacy.js";
+import Contact from "./pages/Contact.js";
 
 const cookies = new Cookies();
 
@@ -44,6 +46,8 @@ function App() {
           <Route path="/mysets" element={<MySets />} />
           <Route path="/me" element={<UserInfo />} />
           <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </AppWrapper>
