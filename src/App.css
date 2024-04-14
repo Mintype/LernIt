@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+:root {
+  /* CSS HEX */
+  --eerie-black: #1c2120ff;
+  --eerie-black-2: #1b1b1bff;
+  --timberwolf: #d9d6d4ff;
+  --brunswick-green: #1d4038ff;
+  --brunswick-green-2: #305044ff;
+}
