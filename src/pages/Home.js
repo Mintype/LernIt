@@ -111,8 +111,9 @@ function Home() {
           { studyLists ? (
             studyLists.map((guide) => (
 
-              <div className='exampleBox' key={guide.id}> <a href={`/list/${guide.id}`}> {guide.title} </a> </div> 
-
+              <a className='box-a' href={`/list/${guide.id}`}>
+                <div className='exampleBox' key={guide.id}> <p>{guide.title}</p> </div> 
+              </a>
             ))
           ) : ( <p>Loading...</p> )}
         </div>
