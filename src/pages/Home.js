@@ -16,7 +16,7 @@ import {
   } from "firebase/firestore";
 
 function Home() {
-  const [displayName, setDisplayName] = useState('Stranger');
+  const [displayName, setDisplayName] = useState('');
   const [studyLists, setStudyLists] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -25,7 +25,7 @@ function Home() {
       if (user) {
         const name = user.displayName;
         if (name) {
-          setDisplayName(name);
+          setDisplayName(", " + name);
         }
       } else {
         setDisplayName('Stranger');
@@ -81,33 +81,32 @@ function Home() {
 
   }, []);
 
-  if (loading) {
-    return(
+  // if (loading) {
+  //   return(
       
-    <div className='home-page'>
-    <h1>Welcome!</h1>
-    </div>
-    )
-  }
+  //   <div className='home-page'>
+  //   <h1>Welcome!</h1>
+  //   </div>
+  //   )
+  // }
   return (
     <div className='home-page'>
-      <h1>Welcome, {displayName}!</h1>
+      <h1>Welcome{displayName}!</h1>
       <div className='list-container'>
         <h2 className='list-container-title'>Recent Study Lists</h2>
         <div className='list-item-container'>
-          <div className='exampleBox'>empty box 😔</div>
+
         </div>
       </div>
       <div className='list-container'>
         <h2 className='list-container-title'>Trending Study Lists</h2>
         <div className='list-item-container'>
-          <div className='exampleBox'>empty box 😔</div>
+          
         </div>
       </div>
       <div className='list-container'>
         <h2 className='list-container-title'>Your Study Lists</h2>
         <div className='list-item-container'>
-          <div className='exampleBox'>empty box 😔</div>
           { studyLists ? (
             studyLists.map((guide) => (
 
@@ -115,7 +114,7 @@ function Home() {
                 <div className='exampleBox' key={guide.id}> <p>{guide.title}</p> </div> 
               </a>
             ))
-          ) : ( <p>Loading...</p> )}
+          ) : ( <div className='exampleBox'>study list loading... 😔</div> )}
         </div>
       </div>
     </div>
