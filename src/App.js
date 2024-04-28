@@ -35,7 +35,7 @@ function App() {
   
   return (
     <AppWrapper>
-      <Router basename="/LernIt">
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new" element={<NewStudyList />} />
