@@ -1,7 +1,7 @@
 {
   "name": "lernit",
   "version": "0.1.0",
-  "homepage": "https://github.com/Mintype/LernIt",
+  "homepage": "https://mintype.github.io/LernIt/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
