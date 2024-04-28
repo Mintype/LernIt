@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Mintype/static/css/main.0a682cdc.css",
-    "main.js": "/Mintype/static/js/main.2993e39e.js",
-    "static/js/453.93e9b419.chunk.js": "/Mintype/static/js/453.93e9b419.chunk.js",
-    "static/media/logo.svg": "/Mintype/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/Mintype/index.html",
-    "main.0a682cdc.css.map": "/Mintype/static/css/main.0a682cdc.css.map",
-    "main.2993e39e.js.map": "/Mintype/static/js/main.2993e39e.js.map",
-    "453.93e9b419.chunk.js.map": "/Mintype/static/js/453.93e9b419.chunk.js.map"
+    "main.css": "/Mintype/LernIt/blob/gh-pages/static/css/main.0a682cdc.css",
+    "main.js": "/Mintype/LernIt/blob/gh-pages/static/js/main.d06c2711.js",
+    "static/js/453.93e9b419.chunk.js": "/Mintype/LernIt/blob/gh-pages/static/js/453.93e9b419.chunk.js",
+    "static/media/logo.svg": "/Mintype/LernIt/blob/gh-pages/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Mintype/LernIt/blob/gh-pages/index.html",
+    "main.0a682cdc.css.map": "/Mintype/LernIt/blob/gh-pages/static/css/main.0a682cdc.css.map",
+    "main.d06c2711.js.map": "/Mintype/LernIt/blob/gh-pages/static/js/main.d06c2711.js.map",
+    "453.93e9b419.chunk.js.map": "/Mintype/LernIt/blob/gh-pages/static/js/453.93e9b419.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0a682cdc.css",
-    "static/js/main.2993e39e.js"
+    "static/js/main.d06c2711.js"
   ]
 }
