@@ -35,19 +35,19 @@ function App() {
   
   return (
     <AppWrapper>
-      <Router>
+      <Router basename="/LernIt">
         <Routes>
-          <Route path="/LernIt" element={<Home />} />
-          <Route path="/LernIt/new" element={<NewStudyList />} />
-          <Route path="/LernIt/list/:id" element={<StudyList />} />
-          <Route path="/LernIt/about" element={<About />} />
-          <Route path="/LernIt/search/:id" element={<Search />} />
-          <Route path="/LernIt/search" element={<Search />} />
-          <Route path="/LernIt/mysets" element={<MySets />} />
-          <Route path="/LernIt/me" element={<UserInfo />} />
-          <Route path="/LernIt/terms" element={<TermsOfService />} />
-          <Route path="/LernIt/privacy" element={<Privacy />} />
-          <Route path="/LernIt/contact" element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/new" element={<NewStudyList />} />
+          <Route path="/list/:id" element={<StudyList />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/search/:id" element={<Search />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/mysets" element={<MySets />} />
+          <Route path="/me" element={<UserInfo />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </AppWrapper>
