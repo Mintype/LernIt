@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Mintype/LernIt/tree/gh-pages/static/css/main.0a682cdc.css",
-    "main.js": "/Mintype/LernIt/tree/gh-pages/static/js/main.3fdbaaec.js",
-    "static/js/453.93e9b419.chunk.js": "/Mintype/LernIt/tree/gh-pages/static/js/453.93e9b419.chunk.js",
-    "static/media/logo.svg": "/Mintype/LernIt/tree/gh-pages/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/Mintype/LernIt/tree/gh-pages/index.html",
-    "main.0a682cdc.css.map": "/Mintype/LernIt/tree/gh-pages/static/css/main.0a682cdc.css.map",
-    "main.3fdbaaec.js.map": "/Mintype/LernIt/tree/gh-pages/static/js/main.3fdbaaec.js.map",
-    "453.93e9b419.chunk.js.map": "/Mintype/LernIt/tree/gh-pages/static/js/453.93e9b419.chunk.js.map"
+    "main.css": "/LernIt/static/css/main.0a682cdc.css",
+    "main.js": "/LernIt/static/js/main.a6f1d18e.js",
+    "static/js/453.93e9b419.chunk.js": "/LernIt/static/js/453.93e9b419.chunk.js",
+    "static/media/logo.svg": "/LernIt/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/LernIt/index.html",
+    "main.0a682cdc.css.map": "/LernIt/static/css/main.0a682cdc.css.map",
+    "main.a6f1d18e.js.map": "/LernIt/static/js/main.a6f1d18e.js.map",
+    "453.93e9b419.chunk.js.map": "/LernIt/static/js/453.93e9b419.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0a682cdc.css",
-    "static/js/main.3fdbaaec.js"
+    "static/js/main.a6f1d18e.js"
   ]
 }
